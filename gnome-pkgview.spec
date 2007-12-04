@@ -1,5 +1,5 @@
 %define	version	1.0.6
-%define release	3mdk
+%define release	 %mkrel 3
 
 Summary:	A tool for determining versions of installed GNOME packages
 Name:		gnome-pkgview
