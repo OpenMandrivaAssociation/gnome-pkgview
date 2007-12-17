@@ -38,15 +38,15 @@ rm -rf %{buildroot}
 
 install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/pixmaps/%{name}/mandrake.png
 
-mkdir -p %{buildroot}%{_menudir}
-cat << _EOF_ > %{buildroot}%{_menudir}/%{name}
-?package(%{name}): \
- command="%{_bindir}/%{name}" \
- needs="x11" \
- section="Configuration/Packaging" \
- title="GNOME Package Viewer" \
- longtitle="Retrieve information about installed GNOME desktop libraries" \
- icon="%{name}.png"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_bindir}/%{name} 
+Categories=Settings;PackageManager; 
+Name=GNOME Package Viewer 
+Comment=Retrieve information about installed GNOME desktop libraries 
+Icon=%{name}
 _EOF_
 
 # icons
@@ -78,7 +78,7 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{_datadir}/pixmaps/*
 %{_datadir}/applications/*.desktop
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_sysconfdir}/gconf/schemas/*.schemas
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
