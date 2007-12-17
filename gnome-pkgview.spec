@@ -47,7 +47,7 @@ Categories=Settings;PackageManager;
 Name=GNOME Package Viewer 
 Comment=Retrieve information about installed GNOME desktop libraries 
 Icon=%{name}
-_EOF_
+EOF
 
 # icons
 mkdir -p %{buildroot}%{_iconsdir} %{buildroot}%{_miconsdir}
