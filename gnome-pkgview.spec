@@ -18,7 +18,7 @@ BuildRequires:	ImageMagick
 BuildRequires:	libgnomeui2-devel
 BuildRequires:	perl-XML-Parser
 Requires:	gnome-desktop
-Prereq:		GConf2 >= 2.3.3
+Requires(post,preun):	GConf2 >= 2.3.3
 
 %description
 Displays version information for GNOME desktop components, and determines
