@@ -8,6 +8,7 @@ Release:	%{release}
 License:	GPL
 Group:		Graphical desktop/GNOME
 URL:		http://www.gtnorthern.demon.co.uk/gnome-pkgview.html
+Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 # http://www.gtnorthern.demon.co.uk/packages/gnome-pkgview/
 Source:		%{name}-%{version}.tar.bz2
