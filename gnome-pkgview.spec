@@ -59,13 +59,11 @@ convert -geometry 16x16 pixmaps/pkgview.png %{buildroot}%{_miconsdir}/%{name}.pn
 %find_lang %{name}
 
 %post
-GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` gconftool-2 --makefile-install-rule %{_sysconfdir}/gconf/schemas/gnome-pkgview.schemas >/dev/null
+%post_install_gconf_schemas gnome-pkgview
 %update_menus
 
 %preun
-if [ $1 = 0 ]; then
-  GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` gconftool-2 --makefile-uninstall-rule %{_sysconfdir}/gconf/schemas/gnome-pkgview.schemas >/dev/null
-fi
+%preun_uninstall_gconf_schemas gnome-pkgview
 
 %postun
 %clean_menus
