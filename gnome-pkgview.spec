@@ -58,15 +58,19 @@ convert -geometry 16x16 pixmaps/pkgview.png %{buildroot}%{_miconsdir}/%{name}.pn
 
 %find_lang %{name}
 
+%if %mdkversion < 200900
 %post
 %post_install_gconf_schemas gnome-pkgview
 %update_menus
+%endif
 
 %preun
 %preun_uninstall_gconf_schemas gnome-pkgview
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf %{buildroot}
