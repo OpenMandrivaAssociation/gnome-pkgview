@@ -15,7 +15,7 @@ Source:		%{name}-%{version}.tar.bz2
 Source1:	%{name}-mandrake.png
 
 BuildRequires:	GConf2
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:	libgnomeui2-devel
 BuildRequires:	perl-XML-Parser
 Requires:	gnome-desktop
