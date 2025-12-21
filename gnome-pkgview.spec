@@ -14,6 +14,11 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 Source:		%{name}-%{version}.tar.bz2
 Source1:	%{name}-mandrake.png
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	GConf2
 BuildRequires:	imagemagick
 BuildRequires:	libgnomeui2-devel
